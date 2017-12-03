@@ -146,13 +146,11 @@ class PublicClient {
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new RequestException('Received invalid JSON in response', $response);
         }
-
-        if (!empty($response->getHeaders()['CB-BEFORE'])) {
-            $data['before'] = $response->getHeaders()['CB-BEFORE'];
+        if (!empty($response->getHeaders()['cb-before'])) {
+            $data['before'] = $response->getHeaders()['cb-before'][0];
         }
-
-        if (!empty($response->getHeaders()['CB-AFTER'])) {
-            $data['after'] = $response->getHeaders()['CB-AFTER'];
+        if (!empty($response->getHeaders()['cb-after'])) {
+            $data['before'] = $response->getHeaders()['cb-after'][0];
         }
 
         return $data;
