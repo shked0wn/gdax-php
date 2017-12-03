@@ -150,7 +150,7 @@ class PublicClient {
             $data['before'] = $response->getHeaders()['cb-before'][0];
         }
         if (!empty($response->getHeaders()['cb-after'])) {
-            $data['before'] = $response->getHeaders()['cb-after'][0];
+            $data['after'] = $response->getHeaders()['cb-after'][0];
         }
 
         return $data;
