@@ -42,12 +42,7 @@ class GDAXConstants {
     /**
      * @var string
      */
-    const PRODUCT_ID_LTC_EUR = 'LTC-EUR';
-
-    /**
-     * @var string
-     */
-    const PRODUCT_ID_LTC_BTC = 'LTC-BTC';
+    const PRODUCT_ID_BTC_USD = 'BTC-USD';
 
     /**
      * @var string
@@ -58,6 +53,26 @@ class GDAXConstants {
      * @var string
      */
     const PRODUCT_ID_BTC_EUR = 'BTC-EUR';
+
+    /**
+     * @var stirng
+     */
+    const PRODUCT_ID_BCH_USD = 'BCH-USD';
+
+    /**
+     * @var string
+     */
+    const PRODUCT_ID_BCH_BTC = 'BCH-BTC';
+
+    /**
+     * @var string
+     */
+    const PRODUCT_ID_BCH_EUR = 'BCH-EUR';
+
+    /**
+     * @var string
+     */
+    const PRODUCT_ID_ETH_USD = 'ETH-USD';
 
     /**
      * @var string
@@ -77,12 +92,12 @@ class GDAXConstants {
     /**
      * @var string
      */
-    const PRODUCT_ID_BTC_USD = 'BTC-USD';
+    const PRODUCT_ID_LTC_EUR = 'LTC-EUR';
 
     /**
      * @var string
      */
-    const PRODUCT_ID_ETH_USD = 'ETH-USD';
+    const PRODUCT_ID_LTC_BTC = 'LTC-BTC';
 
     /**
      * @var string
@@ -207,7 +222,17 @@ class GDAXConstants {
     /**
      * @var string
      */
+    const CURRENCY_BCH = 'BCH';
+
+    /**
+     * @var string
+     */
     const CURRENCY_ETH = 'ETH';
+
+    /**
+     * @var string
+     */
+    const CURRENCY_LTC = 'LTC';
 
     /**
      * @var string
@@ -267,9 +292,10 @@ class GDAXConstants {
      * @var array
      */
     public static $productIdValues = [
-        self::PRODUCT_ID_LTC_EUR, self::PRODUCT_ID_LTC_BTC, self::PRODUCT_ID_BTC_GBP,
-        self::PRODUCT_ID_BTC_EUR, self::PRODUCT_ID_ETH_EUR, self::PRODUCT_ID_ETH_BTC,
-        self::PRODUCT_ID_LTC_USD, self::PRODUCT_ID_BTC_USD, self::PRODUCT_ID_ETH_USD,
+        self::PRODUCT_ID_BTC_USD, self::PRODUCT_ID_BTC_GBP, self::PRODUCT_ID_BTC_EUR,
+        self::PRODUCT_ID_BCH_USD, self::PRODUCT_ID_BCH_BTC, self::PRODUCT_ID_BCH_EUR,
+        self::PRODUCT_ID_ETH_USD, self::PRODUCT_ID_ETH_BTC, self::PRODUCT_ID_ETH_EUR,
+        self::PRODUCT_ID_LTC_USD, self::PRODUCT_ID_LTC_BTC, self::PRODUCT_ID_LTC_EUR,
     ];
 
     /**
@@ -327,7 +353,7 @@ class GDAXConstants {
      */
     public static $currencyValues = [
         self::CURRENCY_USD, self::CURRENCY_GBP, self::CURRENCY_EUR,
-        self::CURRENCY_BTC, self::CURRENCY_ETH,
+        self::CURRENCY_BTC, self::CURRENCY_ETH, self::CURRENCY_LTC, self::CURRENCY_BCH
     ];
 
     /**
