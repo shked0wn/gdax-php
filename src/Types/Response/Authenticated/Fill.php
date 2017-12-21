@@ -75,6 +75,11 @@ class Fill implements ResponseTypeInterface {
     protected $profile_id;
 
     /**
+     * @var float
+     */
+    protected $usd_volume;
+
+    /**
      * @return string
      */
     public function getTradeId() {
@@ -275,6 +280,23 @@ class Fill implements ResponseTypeInterface {
      */
     protected function setProfileId($profile_id) {
         $this->profile_id = $profile_id;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getUsdVolume() {
+        return $this->usd_volume;
+    }
+
+    /**
+     * @param float $usd_volume
+     *
+     * @return Fill
+     */
+    public function setUsdVolume($usd_volume) {
+        $this->usd_volume = (float)$usd_volume;
         return $this;
     }
 
