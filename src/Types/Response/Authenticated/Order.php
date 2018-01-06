@@ -140,6 +140,16 @@ class Order implements ResponseTypeInterface {
     protected $done_reason;
 
     /**
+     * @var string
+     */
+    protected $stop;
+
+    /**
+     * @var float
+     */
+    protected $stop_price;
+
+    /**
      * @return string
      */
     public function getId() {
@@ -562,6 +572,40 @@ class Order implements ResponseTypeInterface {
      */
     protected function setDoneReason($done_reason) {
         $this->done_reason = $done_reason;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStop() {
+        return $this->stop;
+    }
+
+    /**
+     * @param string $stop
+     *
+     * @return Order
+     */
+    protected function setStop($stop) {
+        $this->stop = $stop;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getStopPrice() {
+        return $this->stop_price;
+    }
+
+    /**
+     * @param float $stop_price
+     *
+     * @return Order
+     */
+    public function setStopPrice($stop_price) {
+        $this->stop_price = (float)$stop_price;
         return $this;
     }
 
