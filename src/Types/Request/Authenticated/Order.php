@@ -118,7 +118,7 @@ class Order implements RequestTypeInterface {
      */
     public function setType($type) {
 
-        $this->checkStringInArray($type, GDAXConstants::$orderTypeValues);
+        $this->checkInArray($type, GDAXConstants::$orderTypeValues);
         $this->type = $type;
         return $this;
 
@@ -172,7 +172,7 @@ class Order implements RequestTypeInterface {
      */
     public function setSide($side) {
 
-        $this->checkStringInArray($side, GDAXConstants::$orderSideValues);
+        $this->checkInArray($side, GDAXConstants::$orderSideValues);
         $this->side = $side;
         return $this;
 
@@ -192,7 +192,7 @@ class Order implements RequestTypeInterface {
      */
     public function setProductId($product_id) {
 
-        $this->checkStringInArray($product_id, GDAXConstants::$productIdValues);
+        $this->checkInArray($product_id, GDAXConstants::$productIdValues);
         $this->product_id = $product_id;
         return $this;
 
@@ -229,7 +229,7 @@ class Order implements RequestTypeInterface {
      */
     public function setStp($stp) {
 
-        $this->checkStringInArray($stp, GDAXConstants::$stpValues);
+        $this->checkInArray($stp, GDAXConstants::$stpValues);
         $this->stp = $stp;
         return $this;
 
@@ -266,7 +266,7 @@ class Order implements RequestTypeInterface {
      */
     public function setCancelAfter($cancel_after) {
 
-        $this->checkStringInArray($cancel_after, GDAXConstants::$cancelAfterValues);
+        $this->checkInArray($cancel_after, GDAXConstants::$cancelAfterValues);
         $this->cancel_after = $cancel_after;
         return $this;
 

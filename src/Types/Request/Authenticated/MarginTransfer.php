@@ -68,7 +68,7 @@ class MarginTransfer implements RequestTypeInterface {
      */
     public function setType($type) {
 
-        $this->checkStringInArray($type, GDAXConstants::$marginTransferTypeValues);
+        $this->checkInArray($type, GDAXConstants::$marginTransferTypeValues);
         $this->type = $type;
         return $this;
 
@@ -88,7 +88,7 @@ class MarginTransfer implements RequestTypeInterface {
      */
     public function setCurrency($currency) {
 
-        $this->checkStringInArray($currency, GDAXConstants::$currencyValues);
+        $this->checkInArray($currency, GDAXConstants::$currencyValues);
         $this->currency = $currency;
         return $this;
 

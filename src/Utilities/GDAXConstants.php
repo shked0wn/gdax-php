@@ -280,6 +280,36 @@ class GDAXConstants {
     const CANCEL_AFTER_DAY = 'day';
 
     /**
+     * @var int
+     */
+    const GRANULARITY_1_MIN = 60;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_5_MIN = 300;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_15_MIN = 900;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_1_HOUR = 3600;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_6_HOUR = 21600;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_1_DAY = 86400;
+
+    /**
      * @var array
      */
     public static $defaultHeaders = [
@@ -376,6 +406,15 @@ class GDAXConstants {
      */
     public static $reportFormatValues = [
         self::REPORT_FORMAT_PDF, self::REPORT_FORMAT_CSV,
+    ];
+
+    /**
+     * @var array
+     */
+    public static $granularityValues = [
+        self::GRANULARITY_1_MIN, self::GRANULARITY_5_MIN, self::GRANULARITY_15_MIN,
+        self::GRANULARITY_1_HOUR, self::GRANULARITY_6_HOUR,
+        self::GRANULARITY_1_DAY
     ];
 
 }

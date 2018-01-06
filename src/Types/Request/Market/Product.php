@@ -58,7 +58,7 @@ class Product implements RequestTypeInterface {
      */
     public function setProductId($product_id) {
 
-        $this->checkStringInArray($product_id, GDAXConstants::$productIdValues);
+        $this->checkInArray($product_id, GDAXConstants::$productIdValues);
         $this->product_id = $product_id;
         return $this;
 
@@ -128,8 +128,11 @@ class Product implements RequestTypeInterface {
      * @return Product
      */
     public function setGranularity($granularity) {
+
+        $this->checkInArray($granularity, GDAXConstants::$granularityValues);
         $this->granularity = (int)$granularity;
         return $this;
+
     }
 
 }

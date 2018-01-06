@@ -139,7 +139,7 @@ class Report implements RequestTypeInterface {
      */
     public function setProductId($product_id) {
 
-        $this->checkStringInArray($product_id, GDAXConstants::$productIdValues);
+        $this->checkInArray($product_id, GDAXConstants::$productIdValues);
         $this->product_id = $product_id;
         return $this;
 
@@ -176,7 +176,7 @@ class Report implements RequestTypeInterface {
      */
     public function setFormat($format) {
 
-        $this->checkStringInArray($format, GDAXConstants::$reportFormatValues);
+        $this->checkInArray($format, GDAXConstants::$reportFormatValues);
         $this->format = $format;
         return $this;
 

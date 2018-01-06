@@ -68,7 +68,7 @@ class Deposit implements RequestTypeInterface {
      */
     public function setCurrency($currency) {
 
-        $this->checkStringInArray($currency, GDAXConstants::$currencyValues);
+        $this->checkInArray($currency, GDAXConstants::$currencyValues);
         $this->currency = $currency;
         return $this;
 

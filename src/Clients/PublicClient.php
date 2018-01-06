@@ -16,6 +16,7 @@ use GDAX\Types\Response\ResponseContainer;
 use GDAX\Utilities\GDAXConstants;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\RequestOptions;
 
 /**
  * Class PublicClient
@@ -96,19 +97,23 @@ class PublicClient {
 
         $requestOptions = [
             'base_uri'    => $this->baseURL,
-            'http_errors' => false,
+            RequestOptions::HTTP_ERRORS => false,
         ];
+
+        if ($streamHandle = fopen('php://memory', 'w') !== false) {
+            $requestOptions[RequestOptions::SINK] = \GuzzleHttp\Psr7\stream_for($streamHandle);
+        };
 
         switch ($method) {
 
             case GDAXConstants::METHOD_POST:
             case GDAXConstants::METHOD_PUT:
-                $requestOptions['json'] = $options;
+                $requestOptions[RequestOptions::JSON] = $options;
                 break;
 
             case GDAXConstants::METHOD_GET:
             case GDAXConstants::METHOD_DELETE:
-                $requestOptions['query'] = $options;
+                $requestOptions[RequestOptions::QUERY] = $options;
                 break;
 
             default:
@@ -120,7 +125,7 @@ class PublicClient {
 
         $uri = implode('/', $uriParts);
 
-        $requestOptions['headers'] = GDAXConstants::$defaultHeaders + $headers;
+        $requestOptions[RequestOptions::HEADERS] = GDAXConstants::$defaultHeaders + $headers;
 
         $response = new Response();
 

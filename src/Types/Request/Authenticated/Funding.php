@@ -48,7 +48,7 @@ class Funding implements RequestTypeInterface {
      */
     public function setStatus($status) {
 
-        $this->checkStringInArray($status, GDAXConstants::$fundingStatusValues);
+        $this->checkInArray($status, GDAXConstants::$fundingStatusValues);
         $this->status = $status;
         return $this;
 
@@ -85,7 +85,7 @@ class Funding implements RequestTypeInterface {
      */
     public function setCurrency($currency) {
 
-        $this->checkStringInArray($currency, GDAXConstants::$currencyValues);
+        $this->checkInArray($currency, GDAXConstants::$currencyValues);
         $this->currency = $currency;
         return $this;
 
