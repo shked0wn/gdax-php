@@ -226,7 +226,7 @@ class Product implements ResponseTypeInterface {
      * @return float
      */
     public function getMinMarketFunds() {
-        return $this->$min_market_funds;
+        return $this->min_market_funds;
     }
 
     /**
@@ -235,7 +235,7 @@ class Product implements ResponseTypeInterface {
      * @return Product
      */
     protected function setMinMarketFunds($min_market_funds) {
-        $this->$min_market_funds = (float)$min_market_funds;
+        $this->min_market_funds = (float)$min_market_funds;
         return $this;
     }
 
@@ -243,7 +243,7 @@ class Product implements ResponseTypeInterface {
      * @return float
      */
     public function getMaxMarketFunds() {
-        return $this->$max_market_funds;
+        return $this->max_market_funds;
     }
 
     /**
@@ -252,7 +252,7 @@ class Product implements ResponseTypeInterface {
      * @return Product
      */
     protected function setMaxMarketFunds($max_market_funds) {
-        $this->$max_market_funds = (float)$max_market_funds;
+        $this->max_market_funds = (float)$max_market_funds;
         return $this;
     }
 }

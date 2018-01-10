@@ -100,7 +100,7 @@ class PublicClient {
             RequestOptions::HTTP_ERRORS => false,
         ];
 
-        if ($streamHandle = fopen('php://memory', 'w') !== false) {
+        if ($streamHandle = fopen('php://memory', 'r+') !== false) {
             $requestOptions[RequestOptions::SINK] = \GuzzleHttp\Psr7\stream_for($streamHandle);
         };
 
