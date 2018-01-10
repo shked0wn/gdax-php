@@ -60,6 +60,16 @@ class Product implements ResponseTypeInterface {
     protected $status;
 
     /**
+     * @var float
+     */
+    protected $min_market_funds;
+
+    /**
+     * @var float
+     */
+    protected $max_market_funds;
+
+    /**
      * @return string
      */
     public function getId() {
@@ -209,6 +219,40 @@ class Product implements ResponseTypeInterface {
      */
     protected function setStatus($status) {
         $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getMinMarketFunds() {
+        return $this->$min_market_funds;
+    }
+
+    /**
+     * @param float $min_market_funds
+     *
+     * @return Product
+     */
+    protected function setMinMarketFunds($min_market_funds) {
+        $this->$min_market_funds = (float)$min_market_funds;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getMaxMarketFunds() {
+        return $this->$max_market_funds;
+    }
+
+    /**
+     * @param float $max_market_funds
+     *
+     * @return Product
+     */
+    protected function setMaxMarketFunds($max_market_funds) {
+        $this->$max_market_funds = (float)$max_market_funds;
         return $this;
     }
 }
