@@ -18,7 +18,7 @@ class Withdrawal implements RequestTypeInterface {
     use ValidatorTrait;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -43,19 +43,19 @@ class Withdrawal implements RequestTypeInterface {
     protected $crypto_address;
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return Withdrawal
      */
     public function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 

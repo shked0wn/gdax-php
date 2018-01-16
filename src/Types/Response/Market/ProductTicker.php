@@ -20,27 +20,27 @@ class ProductTicker implements ResponseTypeInterface {
     protected $trade_id;
 
     /**
-     * @var float
+     * @var string
      */
     protected $price;
 
     /**
-     * @var float
+     * @var string
      */
     protected $size;
 
     /**
-     * @var float
+     * @var string
      */
     protected $bid;
 
     /**
-     * @var float
+     * @var string
      */
     protected $ask;
 
     /**
-     * @var float
+     * @var string
      */
     protected $volume;
 
@@ -67,87 +67,87 @@ class ProductTicker implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getPrice() {
         return $this->price;
     }
 
     /**
-     * @param float $price
+     * @param string $price
      *
      * @return ProductTicker
      */
     protected function setPrice($price) {
-        $this->price = (float)$price;
+        $this->price = $price;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getSize() {
         return $this->size;
     }
 
     /**
-     * @param float $size
+     * @param string $size
      *
      * @return ProductTicker
      */
     protected function setSize($size) {
-        $this->size = (float)$size;
+        $this->size = $size;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getBid() {
         return $this->bid;
     }
 
     /**
-     * @param float $bid
+     * @param string $bid
      *
      * @return ProductTicker
      */
     protected function setBid($bid) {
-        $this->bid = (float)$bid;
+        $this->bid = $bid;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAsk() {
         return $this->ask;
     }
 
     /**
-     * @param float $ask
+     * @param string $ask
      *
      * @return ProductTicker
      */
     protected function setAsk($ask) {
-        $this->ask = (float)$ask;
+        $this->ask = $ask;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getVolume() {
         return $this->volume;
     }
 
     /**
-     * @param float $volume
+     * @param string $volume
      *
      * @return ProductTicker
      */
     protected function setVolume($volume) {
-        $this->volume = (float)$volume;
+        $this->volume = $volume;
         return $this;
     }
 

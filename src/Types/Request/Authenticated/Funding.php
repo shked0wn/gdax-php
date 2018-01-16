@@ -25,7 +25,7 @@ class Funding implements RequestTypeInterface {
     protected $status;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -55,19 +55,19 @@ class Funding implements RequestTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return Funding
      */
     public function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 

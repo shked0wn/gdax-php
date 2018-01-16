@@ -25,7 +25,7 @@ class Currency implements ResponseTypeInterface {
     protected $name;
 
     /**
-     * @var float
+     * @var string
      */
     protected $min_size;
 
@@ -69,19 +69,19 @@ class Currency implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getMinSize() {
         return $this->min_size;
     }
 
     /**
-     * @param float $min_size
+     * @param string $min_size
      *
      * @return Currency
      */
     protected function setMinSize($min_size) {
-        $this->min_size = (float)$min_size;
+        $this->min_size = $min_size;
         return $this;
     }
 

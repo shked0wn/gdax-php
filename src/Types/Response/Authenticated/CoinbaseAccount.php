@@ -29,7 +29,7 @@ class CoinbaseAccount implements ResponseTypeInterface {
     protected $name;
 
     /**
-     * @var float
+     * @var string
      */
     protected $balance;
 
@@ -98,14 +98,14 @@ class CoinbaseAccount implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getBalance() {
         return $this->balance;
     }
 
     /**
-     * @param float $balance
+     * @param string $balance
      *
      * @return CoinbaseAccount
      */

@@ -28,12 +28,12 @@ class Ledger implements ResponseTypeInterface {
     protected $created_at;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
     /**
-     * @var float
+     * @var string
      */
     protected $balance;
 
@@ -99,19 +99,19 @@ class Ledger implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return Ledger
      */
     protected function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 
@@ -123,12 +123,12 @@ class Ledger implements ResponseTypeInterface {
     }
 
     /**
-     * @param float $balance
+     * @param string $balance
      *
      * @return Ledger
      */
     protected function setBalance($balance) {
-        $this->balance = (float)$balance;
+        $this->balance = $balance;
         return $this;
     }
 

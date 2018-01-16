@@ -43,12 +43,12 @@ class Order implements RequestTypeInterface {
     protected $time_in_force;
 
     /**
-     * @var float
+     * @var string
      */
     protected $size;
 
     /**
-     * @var float
+     * @var string
      */
     protected $price;
 
@@ -73,7 +73,7 @@ class Order implements RequestTypeInterface {
     protected $post_only;
 
     /**
-     * @var float
+     * @var string
      */
     protected $funds;
 
@@ -83,7 +83,7 @@ class Order implements RequestTypeInterface {
     protected $overdraft_enabled;
 
     /**
-     * @var float
+     * @var string
      */
     protected $funding_amount;
 
@@ -125,36 +125,36 @@ class Order implements RequestTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getSize() {
         return $this->size;
     }
 
     /**
-     * @param float $size
+     * @param string $size
      *
      * @return Order
      */
     public function setSize($size) {
-        $this->size = (float)$size;
+        $this->size = $size;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getPrice() {
         return $this->price;
     }
 
     /**
-     * @param float $price
+     * @param string $price
      *
      * @return Order
      */
     public function setPrice($price) {
-        $this->price = (float)$price;
+        $this->price = $price;
         return $this;
     }
 
@@ -290,14 +290,14 @@ class Order implements RequestTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getFunds() {
         return $this->funds;
     }
 
     /**
-     * @param float $funds
+     * @param string $funds
      *
      * @return Order
      */
@@ -324,19 +324,19 @@ class Order implements RequestTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getFundingAmount() {
         return $this->funding_amount;
     }
 
     /**
-     * @param float $funding_amount
+     * @param string $funding_amount
      *
      * @return Order
      */
     public function setFundingAmount($funding_amount) {
-        $this->funding_amount = (float)$funding_amount;
+        $this->funding_amount = $funding_amount;
         return $this;
     }
 

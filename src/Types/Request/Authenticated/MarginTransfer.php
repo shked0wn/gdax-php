@@ -33,7 +33,7 @@ class MarginTransfer implements RequestTypeInterface {
     protected $currency;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -95,19 +95,19 @@ class MarginTransfer implements RequestTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return MarginTransfer
      */
     public function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 

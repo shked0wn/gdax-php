@@ -20,7 +20,7 @@ class Withdrawal implements ResponseTypeInterface {
     protected $id;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -69,12 +69,12 @@ class Withdrawal implements ResponseTypeInterface {
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return Withdrawal
      */
     protected function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 

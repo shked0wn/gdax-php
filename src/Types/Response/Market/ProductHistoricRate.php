@@ -22,27 +22,27 @@ class ProductHistoricRate implements ResponseTypeInterface {
     protected $time;
 
     /**
-     * @var float
+     * @var string
      */
     protected $low;
 
     /**
-     * @var float
+     * @var string
      */
     protected $high;
 
     /**
-     * @var float
+     * @var string
      */
     protected $open;
 
     /**
-     * @var float
+     * @var string
      */
     protected $close;
 
     /**
-     * @var float
+     * @var string
      */
     protected $volume;
 
@@ -70,87 +70,87 @@ class ProductHistoricRate implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getLow() {
         return $this->low;
     }
 
     /**
-     * @param float $low
+     * @param string $low
      *
      * @return ProductHistoricRate
      */
     protected function setLow($low) {
-        $this->low = (float)$low;
+        $this->low = $low;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getHigh() {
         return $this->high;
     }
 
     /**
-     * @param float $high
+     * @param string $high
      *
      * @return ProductHistoricRate
      */
     protected function setHigh($high) {
-        $this->high = (float)$high;
+        $this->high = $high;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getOpen() {
         return $this->open;
     }
 
     /**
-     * @param float $open
+     * @param string $open
      *
      * @return ProductHistoricRate
      */
     protected function setOpen($open) {
-        $this->open = (float)$open;
+        $this->open = $open;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getClose() {
         return $this->close;
     }
 
     /**
-     * @param float $close
+     * @param string $close
      *
      * @return ProductHistoricRate
      */
     protected function setClose($close) {
-        $this->close = (float)$close;
+        $this->close = $close;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getVolume() {
         return $this->volume;
     }
 
     /**
-     * @param float $volume
+     * @param string $volume
      *
      * @return ProductHistoricRate
      */
     protected function setVolume($volume) {
-        $this->volume = (float)$volume;
+        $this->volume = $volume;
         return $this;
     }
 

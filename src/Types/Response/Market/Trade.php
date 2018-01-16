@@ -25,12 +25,12 @@ class Trade implements ResponseTypeInterface {
     protected $trade_id;
 
     /**
-     * @var float
+     * @var string
      */
     protected $price;
 
     /**
-     * @var float
+     * @var string
      */
     protected $size;
 
@@ -74,36 +74,36 @@ class Trade implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getPrice() {
         return $this->price;
     }
 
     /**
-     * @param float $price
+     * @param string $price
      *
      * @return Trade
      */
     protected function setPrice($price) {
-        $this->price = (float)$price;
+        $this->price = $price;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getSize() {
         return $this->size;
     }
 
     /**
-     * @param float $size
+     * @param string $size
      *
      * @return Trade
      */
     protected function setSize($size) {
-        $this->size = (float)$size;
+        $this->size = $size;
         return $this;
     }
 

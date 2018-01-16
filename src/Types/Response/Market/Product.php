@@ -30,17 +30,17 @@ class Product implements ResponseTypeInterface {
     protected $quote_currency;
 
     /**
-     * @var float
+     * @var string
      */
     protected $base_min_size;
 
     /**
-     * @var float
+     * @var string
      */
     protected $base_max_size;
 
     /**
-     * @var float
+     * @var string
      */
     protected $quote_increment;
 
@@ -60,12 +60,12 @@ class Product implements ResponseTypeInterface {
     protected $status;
 
     /**
-     * @var float
+     * @var string
      */
     protected $min_market_funds;
 
     /**
-     * @var float
+     * @var string
      */
     protected $max_market_funds;
 
@@ -121,36 +121,36 @@ class Product implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getBaseMinSize() {
         return $this->base_min_size;
     }
 
     /**
-     * @param float $base_min_size
+     * @param string $base_min_size
      *
      * @return Product
      */
     protected function setBaseMinSize($base_min_size) {
-        $this->base_min_size = (float)$base_min_size;
+        $this->base_min_size = $base_min_size;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getBaseMaxSize() {
         return $this->base_max_size;
     }
 
     /**
-     * @param float $base_max_size
+     * @param string $base_max_size
      *
      * @return Product
      */
     protected function setBaseMaxSize($base_max_size) {
-        $this->base_max_size = (float)$base_max_size;
+        $this->base_max_size = $base_max_size;
         return $this;
     }
 
@@ -162,12 +162,12 @@ class Product implements ResponseTypeInterface {
     }
 
     /**
-     * @param float $quote_increment
+     * @param string $quote_increment
      *
      * @return Product
      */
     protected function setQuoteIncrement($quote_increment) {
-        $this->quote_increment = (float)$quote_increment;
+        $this->quote_increment = $quote_increment;
         return $this;
     }
 
@@ -223,36 +223,36 @@ class Product implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getMinMarketFunds() {
         return $this->min_market_funds;
     }
 
     /**
-     * @param float $min_market_funds
+     * @param string $min_market_funds
      *
      * @return Product
      */
     protected function setMinMarketFunds($min_market_funds) {
-        $this->min_market_funds = (float)$min_market_funds;
+        $this->min_market_funds = $min_market_funds;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getMaxMarketFunds() {
         return $this->max_market_funds;
     }
 
     /**
-     * @param float $max_market_funds
+     * @param string $max_market_funds
      *
      * @return Product
      */
     protected function setMaxMarketFunds($max_market_funds) {
-        $this->max_market_funds = (float)$max_market_funds;
+        $this->max_market_funds = $max_market_funds;
         return $this;
     }
 }

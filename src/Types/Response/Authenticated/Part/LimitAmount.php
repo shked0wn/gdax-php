@@ -15,7 +15,7 @@ class LimitAmount implements ResponseTypeInterface {
     use ResponseTypeTrait;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -25,19 +25,19 @@ class LimitAmount implements ResponseTypeInterface {
     protected $currency;
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return LimitAmount
      */
     protected function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 

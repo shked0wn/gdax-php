@@ -35,12 +35,12 @@ class Hold implements ResponseTypeInterface {
     protected $updated_at;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
     /**
-     * @var float
+     * @var string
      */
     protected $type;
 
@@ -118,19 +118,19 @@ class Hold implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return Hold
      */
     protected function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 

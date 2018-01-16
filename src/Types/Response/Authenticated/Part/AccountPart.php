@@ -25,22 +25,22 @@ class AccountPart implements ResponseTypeInterface {
     protected $currency;
 
     /**
-     * @var float
+     * @var string
      */
     protected $balance;
 
     /**
-     * @var float
+     * @var string
      */
     protected $hold;
 
     /**
-     * @var float
+     * @var string
      */
     protected $funded_amount;
 
     /**
-     * @var float
+     * @var string
      */
     protected $default_amount;
 
@@ -79,70 +79,70 @@ class AccountPart implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getBalance() {
         return $this->balance;
     }
 
     /**
-     * @param float $balance
+     * @param string $balance
      *
      * @return AccountPart
      */
     protected function setBalance($balance) {
-        $this->balance = (float)$balance;
+        $this->balance = $balance;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getHold() {
         return $this->hold;
     }
 
     /**
-     * @param float $hold
+     * @param string $hold
      *
      * @return AccountPart
      */
     protected function setHold($hold) {
-        $this->hold = (float)$hold;
+        $this->hold = $hold;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getFundedAmount() {
         return $this->funded_amount;
     }
 
     /**
-     * @param float $funded_amount
+     * @param string $funded_amount
      *
      * @return AccountPart
      */
     protected function setFundedAmount($funded_amount) {
-        $this->funded_amount = (float)$funded_amount;
+        $this->funded_amount = $funded_amount;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getDefaultAmount() {
         return $this->default_amount;
     }
 
     /**
-     * @param float $default_amount
+     * @param string $default_amount
      *
      * @return AccountPart
      */
     protected function setDefaultAmount($default_amount) {
-        $this->default_amount = (float)$default_amount;
+        $this->default_amount = $default_amount;
         return $this;
     }
 

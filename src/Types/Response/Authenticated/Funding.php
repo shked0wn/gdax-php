@@ -30,7 +30,7 @@ class Funding implements ResponseTypeInterface {
     protected $profile_id;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -50,12 +50,12 @@ class Funding implements ResponseTypeInterface {
     protected $currency;
 
     /**
-     * @var float
+     * @var string
      */
     protected $repaid_amount;
 
     /**
-     * @var float
+     * @var string
      */
     protected $default_amount;
 
@@ -116,19 +116,19 @@ class Funding implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return Funding
      */
     protected function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 
@@ -184,36 +184,36 @@ class Funding implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getRepaidAmount() {
         return $this->repaid_amount;
     }
 
     /**
-     * @param float $repaid_amount
+     * @param string $repaid_amount
      *
      * @return Funding
      */
     protected function setRepaidAmount($repaid_amount) {
-        $this->repaid_amount = (float)$repaid_amount;
+        $this->repaid_amount = $repaid_amount;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getDefaultAmount() {
         return $this->default_amount;
     }
 
     /**
-     * @param float $default_amount
+     * @param string $default_amount
      *
      * @return Funding
      */
     protected function setDefaultAmount($default_amount) {
-        $this->default_amount = (float)$default_amount;
+        $this->default_amount = $default_amount;
         return $this;
     }
 

@@ -18,7 +18,7 @@ class Deposit implements RequestTypeInterface {
     use ValidatorTrait;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -38,19 +38,19 @@ class Deposit implements RequestTypeInterface {
     protected $coinbase_account_id;
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return Deposit
      */
     public function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 

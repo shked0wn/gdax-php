@@ -25,7 +25,7 @@ class TrailingVolume implements ResponseTypeInterface {
     protected $exchange_volume;
 
     /**
-     * @var float
+     * @var string
      */
     protected $volume;
 
@@ -64,24 +64,24 @@ class TrailingVolume implements ResponseTypeInterface {
      * @return TrailingVolume
      */
     protected function setExchangeVolume($exchange_volume) {
-        $this->exchange_volume = (float)$exchange_volume;
+        $this->exchange_volume = $exchange_volume;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getVolume() {
         return $this->volume;
     }
 
     /**
-     * @param float $volume
+     * @param string $volume
      *
      * @return TrailingVolume
      */
     protected function setVolume($volume) {
-        $this->volume = (float)$volume;
+        $this->volume = $volume;
         return $this;
     }
 
