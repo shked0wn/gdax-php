@@ -69,6 +69,12 @@ class Product implements ResponseTypeInterface {
      */
     protected $max_market_funds;
 
+
+    /**
+     * @var bool
+     */
+    protected $limit_only;
+
     /**
      * @return string
      */
@@ -253,6 +259,24 @@ class Product implements ResponseTypeInterface {
      */
     protected function setMaxMarketFunds($max_market_funds) {
         $this->max_market_funds = $max_market_funds;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isLimitOnly()
+    {
+        return $this->limit_only;
+    }
+
+    /**
+     * @param bool $limit_only
+     * @return $this
+     */
+    public function setLimitOnly($limit_only)
+    {
+        $this->limit_only = $limit_only;
         return $this;
     }
 }
