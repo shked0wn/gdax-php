@@ -17,12 +17,12 @@ class FundingPart implements ResponseTypeInterface {
     }
 
     /**
-     * @var float
+     * @var string
      */
     protected $max_funding_value;
 
     /**
-     * @var float
+     * @var string
      */
     protected $funding_value;
 
@@ -32,36 +32,36 @@ class FundingPart implements ResponseTypeInterface {
     protected $oldest_outstanding;
 
     /**
-     * @return float
+     * @return string
      */
     public function getMaxFundingValue() {
         return $this->max_funding_value;
     }
 
     /**
-     * @param float $max_funding_value
+     * @param string $max_funding_value
      *
      * @return FundingPart
      */
     protected function setMaxFundingValue($max_funding_value) {
-        $this->max_funding_value = (float)$max_funding_value;
+        $this->max_funding_value = $max_funding_value;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getFundingValue() {
         return $this->funding_value;
     }
 
     /**
-     * @param float $funding_value
+     * @param string $funding_value
      *
      * @return FundingPart
      */
     protected function setFundingValue($funding_value) {
-        $this->funding_value = (float)$funding_value;
+        $this->funding_value = $funding_value;
         return $this;
     }
 

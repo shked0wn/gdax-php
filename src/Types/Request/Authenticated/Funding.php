@@ -25,7 +25,7 @@ class Funding implements RequestTypeInterface {
     protected $status;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -48,26 +48,26 @@ class Funding implements RequestTypeInterface {
      */
     public function setStatus($status) {
 
-        $this->checkStringInArray($status, GDAXConstants::$fundingStatusValues);
+        $this->checkInArray($status, GDAXConstants::$fundingStatusValues);
         $this->status = $status;
         return $this;
 
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return Funding
      */
     public function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 
@@ -85,7 +85,7 @@ class Funding implements RequestTypeInterface {
      */
     public function setCurrency($currency) {
 
-        $this->checkStringInArray($currency, GDAXConstants::$currencyValues);
+        $this->checkInArray($currency, GDAXConstants::$currencyValues);
         $this->currency = $currency;
         return $this;
 

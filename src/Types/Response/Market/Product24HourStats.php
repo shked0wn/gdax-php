@@ -15,134 +15,134 @@ class Product24HourStats implements ResponseTypeInterface {
     use ResponseTypeTrait;
 
     /**
-     * @var float
+     * @var string
      */
     protected $open;
 
     /**
-     * @var float
+     * @var string
      */
     protected $high;
 
     /**
-     * @var float
+     * @var string
      */
     protected $low;
 
     /**
-     * @var float
+     * @var string
      */
     protected $volume;
 
     /**
-     * @var float
+     * @var string
      */
     protected $last;
 
     /**
-     * @var float
+     * @var string
      */
     protected $volume_30day;
 
     /**
-     * @return float
+     * @return string
      */
     public function getOpen() {
         return $this->open;
     }
 
     /**
-     * @param float $open
+     * @param string $open
      *
      * @return Product24HourStats
      */
     protected function setOpen($open) {
-        $this->open = (float)$open;
+        $this->open = $open;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getHigh() {
         return $this->high;
     }
 
     /**
-     * @param float $high
+     * @param string $high
      *
      * @return Product24HourStats
      */
     protected function setHigh($high) {
-        $this->high = (float)$high;
+        $this->high = $high;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getLow() {
         return $this->low;
     }
 
     /**
-     * @param float $low
+     * @param string $low
      *
      * @return Product24HourStats
      */
     protected function setLow($low) {
-        $this->low = (float)$low;
+        $this->low = $low;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getVolume() {
         return $this->volume;
     }
 
     /**
-     * @param float $volume
+     * @param string $volume
      *
      * @return Product24HourStats
      */
     protected function setVolume($volume) {
-        $this->volume = (float)$volume;
+        $this->volume = $volume;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getLast() {
         return $this->last;
     }
 
     /**
-     * @param float $last
+     * @param string $last
      *
      * @return Product24HourStats
      */
     public function setLast($last) {
-        $this->last = (float)$last;
+        $this->last = $last;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getVolume30day() {
         return $this->volume_30day;
     }
 
     /**
-     * @param float $volume_30day
+     * @param string $volume_30day
      *
      * @return Product24HourStats
      */
     public function setVolume30day($volume_30day) {
-        $this->volume_30day = (float)$volume_30day;
+        $this->volume_30day = $volume_30day;
         return $this;
     }
 

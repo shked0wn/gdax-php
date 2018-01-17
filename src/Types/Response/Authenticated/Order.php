@@ -25,17 +25,17 @@ class Order implements ResponseTypeInterface {
     protected $client_oid;
 
     /**
-     * @var float
+     * @var string
      */
     protected $price;
 
     /**
-     * @var float
+     * @var string
      */
     protected $size;
 
     /**
-     * @var float
+     * @var string
      */
     protected $funds;
 
@@ -65,6 +65,11 @@ class Order implements ResponseTypeInterface {
     protected $time_in_force;
 
     /**
+     * @var \DateTime
+     */
+    protected $expire_time;
+
+    /**
      * @var string
      */
     protected $cancel_after;
@@ -85,22 +90,22 @@ class Order implements ResponseTypeInterface {
     protected $fill_fees;
 
     /**
-     * @var float
+     * @var string
      */
     protected $filled_size;
 
     /**
-     * @var float
+     * @var string
      */
     protected $executed_value;
 
     /**
-     * @var float
+     * @var string
      */
     protected $overdraft_enabled;
 
     /**
-     * @var float
+     * @var string
      */
     protected $funding_amount;
 
@@ -115,7 +120,7 @@ class Order implements ResponseTypeInterface {
     protected $settled;
 
     /**
-     * @var float
+     * @var string
      */
     protected $specified_funds;
 
@@ -133,6 +138,16 @@ class Order implements ResponseTypeInterface {
      * @var string
      */
     protected $done_reason;
+
+    /**
+     * @var string
+     */
+    protected $stop;
+
+    /**
+     * @var string
+     */
+    protected $stop_price;
 
     /**
      * @return string
@@ -169,36 +184,36 @@ class Order implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getPrice() {
         return $this->price;
     }
 
     /**
-     * @param float $price
+     * @param string $price
      *
      * @return Order
      */
     protected function setPrice($price) {
-        $this->price = (float)$price;
+        $this->price = $price;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getSize() {
         return $this->size;
     }
 
     /**
-     * @param float $size
+     * @param string $size
      *
      * @return Order
      */
     protected function setSize($size) {
-        $this->size = (float)$size;
+        $this->size = $size;
         return $this;
     }
 
@@ -288,6 +303,23 @@ class Order implements ResponseTypeInterface {
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getExpireTime() {
+        return $this->expire_time;
+    }
+
+    /**
+     * @param \DateTime $expire_time
+     *
+     * @return Order
+     */
+    public function setExpireTime($expire_time) {
+        $this->expire_time = new \DateTime($expire_time);
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getCancelAfter() {
@@ -339,53 +371,53 @@ class Order implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getFillFees() {
         return $this->fill_fees;
     }
 
     /**
-     * @param float $fill_fees
+     * @param string $fill_fees
      *
      * @return Order
      */
     protected function setFillFees($fill_fees) {
-        $this->fill_fees = (float)$fill_fees;
+        $this->fill_fees = $fill_fees;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getFilledSize() {
         return $this->filled_size;
     }
 
     /**
-     * @param float $filled_size
+     * @param string $filled_size
      *
      * @return Order
      */
     protected function setFilledSize($filled_size) {
-        $this->filled_size = (float)$filled_size;
+        $this->filled_size = $filled_size;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getExecutedValue() {
         return $this->executed_value;
     }
 
     /**
-     * @param float $executed_value
+     * @param string $executed_value
      *
      * @return Order
      */
     protected function setExecutedValue($executed_value) {
-        $this->executed_value = (float)$executed_value;
+        $this->executed_value = $executed_value;
         return $this;
     }
 
@@ -424,24 +456,24 @@ class Order implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getFunds() {
         return $this->funds;
     }
 
     /**
-     * @param float $funds
+     * @param string $funds
      *
      * @return Order
      */
     protected function setFunds($funds) {
-        $this->funds = (float)$funds;
+        $this->funds = $funds;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getOverdraftEnabled() {
         return $this->overdraft_enabled;
@@ -458,36 +490,36 @@ class Order implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getFundingAmount() {
         return $this->funding_amount;
     }
 
     /**
-     * @param float $funding_amount
+     * @param string $funding_amount
      *
      * @return Order
      */
     public function setFundingAmount($funding_amount) {
-        $this->funding_amount = (float)$funding_amount;
+        $this->funding_amount = $funding_amount;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getSpecifiedFunds() {
         return $this->specified_funds;
     }
 
     /**
-     * @param float $specified_funds
+     * @param string $specified_funds
      *
      * @return Order
      */
     public function setSpecifiedFunds($specified_funds) {
-        $this->specified_funds = (float)$specified_funds;
+        $this->specified_funds = $specified_funds;
         return $this;
     }
 
@@ -540,6 +572,40 @@ class Order implements ResponseTypeInterface {
      */
     protected function setDoneReason($done_reason) {
         $this->done_reason = $done_reason;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStop() {
+        return $this->stop;
+    }
+
+    /**
+     * @param string $stop
+     *
+     * @return Order
+     */
+    protected function setStop($stop) {
+        $this->stop = $stop;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStopPrice() {
+        return $this->stop_price;
+    }
+
+    /**
+     * @param string $stop_price
+     *
+     * @return Order
+     */
+    public function setStopPrice($stop_price) {
+        $this->stop_price = $stop_price;
         return $this;
     }
 

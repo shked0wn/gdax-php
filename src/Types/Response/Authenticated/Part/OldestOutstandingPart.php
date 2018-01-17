@@ -40,7 +40,7 @@ class OldestOutstandingPart implements ResponseTypeInterface {
     protected $account_id;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -130,19 +130,19 @@ class OldestOutstandingPart implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return OldestOutstandingPart
      */
     protected function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 

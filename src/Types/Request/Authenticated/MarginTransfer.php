@@ -33,7 +33,7 @@ class MarginTransfer implements RequestTypeInterface {
     protected $currency;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -68,7 +68,7 @@ class MarginTransfer implements RequestTypeInterface {
      */
     public function setType($type) {
 
-        $this->checkStringInArray($type, GDAXConstants::$marginTransferTypeValues);
+        $this->checkInArray($type, GDAXConstants::$marginTransferTypeValues);
         $this->type = $type;
         return $this;
 
@@ -88,26 +88,26 @@ class MarginTransfer implements RequestTypeInterface {
      */
     public function setCurrency($currency) {
 
-        $this->checkStringInArray($currency, GDAXConstants::$currencyValues);
+        $this->checkInArray($currency, GDAXConstants::$currencyValues);
         $this->currency = $currency;
         return $this;
 
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return MarginTransfer
      */
     public function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 

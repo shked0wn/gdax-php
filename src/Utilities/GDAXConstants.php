@@ -42,12 +42,7 @@ class GDAXConstants {
     /**
      * @var string
      */
-    const PRODUCT_ID_LTC_EUR = 'LTC-EUR';
-
-    /**
-     * @var string
-     */
-    const PRODUCT_ID_LTC_BTC = 'LTC-BTC';
+    const PRODUCT_ID_BTC_USD = 'BTC-USD';
 
     /**
      * @var string
@@ -58,6 +53,26 @@ class GDAXConstants {
      * @var string
      */
     const PRODUCT_ID_BTC_EUR = 'BTC-EUR';
+
+    /**
+     * @var stirng
+     */
+    const PRODUCT_ID_BCH_USD = 'BCH-USD';
+
+    /**
+     * @var string
+     */
+    const PRODUCT_ID_BCH_BTC = 'BCH-BTC';
+
+    /**
+     * @var string
+     */
+    const PRODUCT_ID_BCH_EUR = 'BCH-EUR';
+
+    /**
+     * @var string
+     */
+    const PRODUCT_ID_ETH_USD = 'ETH-USD';
 
     /**
      * @var string
@@ -77,12 +92,12 @@ class GDAXConstants {
     /**
      * @var string
      */
-    const PRODUCT_ID_BTC_USD = 'BTC-USD';
+    const PRODUCT_ID_LTC_EUR = 'LTC-EUR';
 
     /**
      * @var string
      */
-    const PRODUCT_ID_ETH_USD = 'ETH-USD';
+    const PRODUCT_ID_LTC_BTC = 'LTC-BTC';
 
     /**
      * @var string
@@ -207,7 +222,17 @@ class GDAXConstants {
     /**
      * @var string
      */
+    const CURRENCY_BCH = 'BCH';
+
+    /**
+     * @var string
+     */
     const CURRENCY_ETH = 'ETH';
+
+    /**
+     * @var string
+     */
+    const CURRENCY_LTC = 'LTC';
 
     /**
      * @var string
@@ -240,6 +265,51 @@ class GDAXConstants {
     const REPORT_FORMAT_CSV = 'csv';
 
     /**
+     * @var string
+     */
+    const CANCEL_AFTER_MIN = 'min';
+
+    /**
+     * @var string
+     */
+    const CANCEL_AFTER_HOUR = 'hour';
+
+    /**
+     * @var string
+     */
+    const CANCEL_AFTER_DAY = 'day';
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_1_MIN = 60;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_5_MIN = 300;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_15_MIN = 900;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_1_HOUR = 3600;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_6_HOUR = 21600;
+
+    /**
+     * @var int
+     */
+    const GRANULARITY_1_DAY = 86400;
+
+    /**
      * @var array
      */
     public static $defaultHeaders = [
@@ -252,9 +322,10 @@ class GDAXConstants {
      * @var array
      */
     public static $productIdValues = [
-        self::PRODUCT_ID_LTC_EUR, self::PRODUCT_ID_LTC_BTC, self::PRODUCT_ID_BTC_GBP,
-        self::PRODUCT_ID_BTC_EUR, self::PRODUCT_ID_ETH_EUR, self::PRODUCT_ID_ETH_BTC,
-        self::PRODUCT_ID_LTC_USD, self::PRODUCT_ID_BTC_USD, self::PRODUCT_ID_ETH_USD,
+        self::PRODUCT_ID_BTC_USD, self::PRODUCT_ID_BTC_GBP, self::PRODUCT_ID_BTC_EUR,
+        self::PRODUCT_ID_BCH_USD, self::PRODUCT_ID_BCH_BTC, self::PRODUCT_ID_BCH_EUR,
+        self::PRODUCT_ID_ETH_USD, self::PRODUCT_ID_ETH_BTC, self::PRODUCT_ID_ETH_EUR,
+        self::PRODUCT_ID_LTC_USD, self::PRODUCT_ID_LTC_BTC, self::PRODUCT_ID_LTC_EUR,
     ];
 
     /**
@@ -263,6 +334,13 @@ class GDAXConstants {
     public static $timeInForceValues = [
         self::TIME_IN_FORCE_GTC, self::TIME_IN_FORCE_GTT,
         self::TIME_IN_FORCE_IOC, self::TIME_IN_FORCE_FOK,
+    ];
+
+    /**
+     * @var array
+     */
+    public static $cancelAfterValues = [
+        self::CANCEL_AFTER_MIN, self::CANCEL_AFTER_HOUR, self::CANCEL_AFTER_DAY
     ];
 
     /**
@@ -305,7 +383,7 @@ class GDAXConstants {
      */
     public static $currencyValues = [
         self::CURRENCY_USD, self::CURRENCY_GBP, self::CURRENCY_EUR,
-        self::CURRENCY_BTC, self::CURRENCY_ETH,
+        self::CURRENCY_BTC, self::CURRENCY_ETH, self::CURRENCY_LTC, self::CURRENCY_BCH
     ];
 
     /**
@@ -328,6 +406,15 @@ class GDAXConstants {
      */
     public static $reportFormatValues = [
         self::REPORT_FORMAT_PDF, self::REPORT_FORMAT_CSV,
+    ];
+
+    /**
+     * @var array
+     */
+    public static $granularityValues = [
+        self::GRANULARITY_1_MIN, self::GRANULARITY_5_MIN, self::GRANULARITY_15_MIN,
+        self::GRANULARITY_1_HOUR, self::GRANULARITY_6_HOUR,
+        self::GRANULARITY_1_DAY
     ];
 
 }

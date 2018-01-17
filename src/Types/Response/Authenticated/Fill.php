@@ -25,12 +25,12 @@ class Fill implements ResponseTypeInterface {
     protected $product_id;
 
     /**
-     * @var float
+     * @var string
      */
     protected $price;
 
     /**
-     * @var float
+     * @var string
      */
     protected $size;
 
@@ -50,7 +50,7 @@ class Fill implements ResponseTypeInterface {
     protected $liquidity;
 
     /**
-     * @var float
+     * @var string
      */
     protected $fee;
 
@@ -75,14 +75,19 @@ class Fill implements ResponseTypeInterface {
     protected $profile_id;
 
     /**
-     * @return string
+     * @var float
+     */
+    protected $usd_volume;
+
+    /**
+     * @return int
      */
     public function getTradeId() {
         return $this->trade_id;
     }
 
     /**
-     * @param string $trade_id
+     * @param int $trade_id
      *
      * @return Fill
      */
@@ -109,36 +114,36 @@ class Fill implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getPrice() {
         return $this->price;
     }
 
     /**
-     * @param float $price
+     * @param string $price
      *
      * @return Fill
      */
     protected function setPrice($price) {
-        $this->price = (float)$price;
+        $this->price = $price;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getSize() {
         return $this->size;
     }
 
     /**
-     * @param float $size
+     * @param string $size
      *
      * @return Fill
      */
     protected function setSize($size) {
-        $this->size = (float)$size;
+        $this->size = $size;
         return $this;
     }
 
@@ -194,19 +199,19 @@ class Fill implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getFee() {
         return $this->fee;
     }
 
     /**
-     * @param float $fee
+     * @param string $fee
      *
      * @return Fill
      */
     protected function setFee($fee) {
-        $this->fee = (float)$fee;
+        $this->fee = $fee;
         return $this;
     }
 
@@ -275,6 +280,23 @@ class Fill implements ResponseTypeInterface {
      */
     protected function setProfileId($profile_id) {
         $this->profile_id = $profile_id;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsdVolume() {
+        return $this->usd_volume;
+    }
+
+    /**
+     * @param string $usd_volume
+     *
+     * @return Fill
+     */
+    public function setUsdVolume($usd_volume) {
+        $this->usd_volume = $usd_volume;
         return $this;
     }
 

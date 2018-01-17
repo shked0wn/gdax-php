@@ -20,17 +20,17 @@ class PositionPart implements ResponseTypeInterface {
     protected $type;
 
     /**
-     * @var float
+     * @var string
      */
     protected $size;
 
     /**
-     * @var float
+     * @var string
      */
     protected $complement;
 
     /**
-     * @var float
+     * @var string
      */
     protected $max_size;
 
@@ -52,53 +52,53 @@ class PositionPart implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getSize() {
         return $this->size;
     }
 
     /**
-     * @param float $size
+     * @param string $size
      *
      * @return PositionPart
      */
     protected function setSize($size) {
-        $this->size = (float)$size;
+        $this->size = $size;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getComplement() {
         return $this->complement;
     }
 
     /**
-     * @param float $complement
+     * @param string $complement
      *
      * @return PositionPart
      */
     protected function setComplement($complement) {
-        $this->complement = (float)$complement;
+        $this->complement = $complement;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getMaxSize() {
         return $this->max_size;
     }
 
     /**
-     * @param float $max_size
+     * @param string $max_size
      *
      * @return PositionPart
      */
     protected function setMaxSize($max_size) {
-        $this->max_size = (float)$max_size;
+        $this->max_size = $max_size;
         return $this;
     }
 

@@ -18,7 +18,7 @@ class Withdrawal implements RequestTypeInterface {
     use ValidatorTrait;
 
     /**
-     * @var float
+     * @var string
      */
     protected $amount;
 
@@ -43,19 +43,19 @@ class Withdrawal implements RequestTypeInterface {
     protected $crypto_address;
 
     /**
-     * @return float
+     * @return string
      */
     public function getAmount() {
         return $this->amount;
     }
 
     /**
-     * @param float $amount
+     * @param string $amount
      *
      * @return Withdrawal
      */
     public function setAmount($amount) {
-        $this->amount = (float)$amount;
+        $this->amount = $amount;
         return $this;
     }
 
@@ -73,7 +73,7 @@ class Withdrawal implements RequestTypeInterface {
      */
     public function setCurrency($currency) {
 
-        $this->checkStringInArray($currency, GDAXConstants::$currencyValues);
+        $this->checkInArray($currency, GDAXConstants::$currencyValues);
         $this->currency = $currency;
         return $this;
 
@@ -110,6 +110,23 @@ class Withdrawal implements RequestTypeInterface {
      */
     public function setCoinbaseAccountId($coinbase_account_id) {
         $this->coinbase_account_id = $coinbase_account_id;
+        return $this;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getCryptoAddress() {
+        return $this->crypto_address;
+    }
+    
+    /**
+     * @param string $crypto_address
+     *
+     * @return Withdrawal
+     */
+    public function setCryptoAddress($crypto_address) {
+        $this->crypto_address = $crypto_address;
         return $this;
     }
 

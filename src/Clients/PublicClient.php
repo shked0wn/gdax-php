@@ -7,16 +7,16 @@ use GDAX\Types\Request\Market\Product as RequestProduct;
 use GDAX\Types\Response\Market\Currency as ResponseCurrency;
 use GDAX\Types\Response\Market\Product as ResponseProduct;
 use GDAX\Types\Response\Market\Product24HourStats as ResponseProduct24HourStats;
+use GDAX\Types\Response\Market\ProductHistoricRate as ResponseProductHistoricRate;
 use GDAX\Types\Response\Market\ProductOrderBook as ResponseProductOrderBook;
 use GDAX\Types\Response\Market\ProductTicker as ResponseProductTicker;
 use GDAX\Types\Response\Market\Time as ResponseTime;
 use GDAX\Types\Response\Market\Trade as ResponseTrade;
-use GDAX\Types\Response\RawData as ResponseRawData;
 use GDAX\Types\Response\ResponseContainer;
 use GDAX\Utilities\GDAXConstants;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\RequestOptions;
 
 /**
  * Class PublicClient
@@ -87,6 +87,8 @@ class PublicClient {
      * @param array  $options
      * @param array  $headers
      *
+     * @throws \Exception
+     *
      * @return array
      */
     protected function request($method, array $uriParts, array $options = [], array $headers = []) {
@@ -95,19 +97,23 @@ class PublicClient {
 
         $requestOptions = [
             'base_uri'    => $this->baseURL,
-            'http_errors' => false,
+            RequestOptions::HTTP_ERRORS => false,
         ];
+
+        if ($streamHandle = fopen('php://memory', 'r+') !== false) {
+            $requestOptions[RequestOptions::SINK] = \GuzzleHttp\Psr7\stream_for($streamHandle);
+        };
 
         switch ($method) {
 
             case GDAXConstants::METHOD_POST:
             case GDAXConstants::METHOD_PUT:
-                $requestOptions['json'] = $options;
+                $requestOptions[RequestOptions::JSON] = $options;
                 break;
 
             case GDAXConstants::METHOD_GET:
             case GDAXConstants::METHOD_DELETE:
-                $requestOptions['query'] = $options;
+                $requestOptions[RequestOptions::QUERY] = $options;
                 break;
 
             default:
@@ -119,7 +125,7 @@ class PublicClient {
 
         $uri = implode('/', $uriParts);
 
-        $requestOptions['headers'] = GDAXConstants::$defaultHeaders + $headers;
+        $requestOptions[RequestOptions::HEADERS] = GDAXConstants::$defaultHeaders + $headers;
 
         $response = new Response();
 
@@ -144,7 +150,10 @@ class PublicClient {
         $data = json_decode($response->getBody()->getContents(), true);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new RequestException('Received invalid JSON in response', $response);
+            throw new \Exception(
+                'Received invalid JSON in response. Error: ' . json_last_error_msg() .
+                ' - Body: ' . $response->getBody()->getContents()
+            );
         }
         if (!empty($response->getHeaders()['cb-before'])) {
             $data['before'] = $response->getHeaders()['cb-before'][0];
@@ -207,7 +216,7 @@ class PublicClient {
      * @return ResponseTypeInterface
      */
     public function getProductHistoricRates(RequestProduct $product) {
-        return $this->get(['products', $product->getProductId(), 'candles'], ResponseRawData::class, $product->toArray());
+        return $this->get(['products', $product->getProductId(), 'candles'], ResponseProductHistoricRate::class, $product->toArray());
     }
 
     /**

@@ -79,7 +79,7 @@ class LedgerDetailsPart implements ResponseTypeInterface {
      * @return LedgerDetailsPart
      */
     protected function setTradeId($trade_id) {
-        $this->trade_id = (int)$trade_id;
+        $this->trade_id = $trade_id;
         return $this;
     }
 

@@ -25,17 +25,17 @@ class Account implements ResponseTypeInterface {
     protected $currency;
 
     /**
-     * @var float
+     * @var string
      */
     protected $balance;
 
     /**
-     * @var float
+     * @var string
      */
     protected $available;
 
     /**
-     * @var float
+     * @var string
      */
     protected $hold;
 
@@ -79,53 +79,53 @@ class Account implements ResponseTypeInterface {
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getBalance() {
         return $this->balance;
     }
 
     /**
-     * @param float $balance
+     * @param string $balance
      *
      * @return Account
      */
     protected function setBalance($balance) {
-        $this->balance = (float)$balance;
+        $this->balance = $balance;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getAvailable() {
         return $this->available;
     }
 
     /**
-     * @param float $available
+     * @param string $available
      *
      * @return Account
      */
     protected function setAvailable($available) {
-        $this->available = (float)$available;
+        $this->available = $available;
         return $this;
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getHold() {
         return $this->hold;
     }
 
     /**
-     * @param float $hold
+     * @param string $hold
      *
      * @return Account
      */
     protected function setHold($hold) {
-        $this->hold = (float)$hold;
+        $this->hold = $hold;
         return $this;
     }
 

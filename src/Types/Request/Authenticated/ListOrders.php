@@ -41,7 +41,7 @@ class ListOrders implements RequestTypeInterface {
      */
     public function setStatus($status) {
 
-        $this->checkStringInArray($status, GDAXConstants::$orderStatusValues);
+        $this->checkInArray($status, GDAXConstants::$orderStatusValues);
         $this->status = $status;
         return $this;
 
@@ -61,7 +61,7 @@ class ListOrders implements RequestTypeInterface {
      */
     public function setProductId($product_id) {
 
-        $this->checkStringInArray($product_id, GDAXConstants::$productIdValues);
+        $this->checkInArray($product_id, GDAXConstants::$productIdValues);
         $this->product_id = $product_id;
         return $this;
 
